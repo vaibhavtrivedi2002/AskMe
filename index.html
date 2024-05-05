@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ask AI</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sans+Serif:wght@700&display=swap">
+  <link rel="icon" href="favicon.jpg">  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sans+Serif:wght@700&display=swap">
   <style>
     /* Basic styling for the search page */
     body {
@@ -15,20 +15,21 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 100vh;
+      min-height: 100vh;  /* Ensures full viewport height on all devices */
       margin: 0;
     }
 
     /* logo styles */
     .logo {
-      font-size: 3rem; /* Increased font size for logo */
-      color:  #808080;
+      font-size: 3rem;
+      color: #808080;
+      margin: 0 auto;  /* Center logo horizontally on all screens */
       margin-bottom: 20px;
     }
 
     /* Search box styles */
     #search-box {
-      width: 400px;
+      width: 400px;  /* Maintain a base width */
     }
 
     #search-input {
@@ -54,6 +55,24 @@
     /* Search button hover effect */
     #search-button:hover {
       background-color: #3367d6;
+    }
+
+    /* Media queries for responsive adjustments */
+    @media (max-width: 768px) {
+      .logo {
+        font-size: 2rem;  /* Reduce logo size for tablets */
+      }
+      #search-box {
+        width: 80%;     /* Increase width for most of tablet screen */
+      }
+      #search-input,
+      #search-button {
+        font-size: 14px;  /* Reduce font size for better readability */
+      }
+    }
+
+    @media (max-width: 480px) {
+      /* Add more specific styles for phones here, like centering elements */
     }
   </style>
 </head>
