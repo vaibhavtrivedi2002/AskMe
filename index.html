@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ask AI</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sans+Serif:wght@700&display=swap">
+  <style>
+    /* Basic styling for the search page */
+    body {
+      font-family: 'Sans Serif', sans-serif;
+      background-color: #f9f9f9;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    /* logo styles */
+    .logo {
+      font-size: 3rem; /* Increased font size for logo */
+      color:  #808080;
+      margin-bottom: 20px;
+    }
+
+    /* Search box styles */
+    #search-box {
+      width: 400px;
+    }
+
+    #search-input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 20px;
+      font-size: 16px;
+    }
+
+    /* Search button styles */
+    #search-button {
+      background-color: #4285f4;
+      color: #ffffff;
+      border: none;
+      border-radius: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    /* Search button hover effect */
+    #search-button:hover {
+      background-color: #3367d6;
+    }
+  </style>
+</head>
+<body>
+  <div class="logo">Ask AI</div>
+
+  <div id="search-box">
+    <input type="text" id="search-input" placeholder="Ask me anything">
+    <button id="search-button">Search</button>
+  </div>
+
+  <script>
+    // Function to handle search button click
+    function performSearch() {
+      const query = document.getElementById('search-input').value;
+      if (query.trim() !== '') {
+        // Redirect to Google search results page
+        window.location.href = `https://www.google.co.in/search?q=${encodeURIComponent(query)}`;
+      }
+    }
+
+    // Attach click event listener to search button
+    document.getElementById('search-button').addEventListener('click', performSearch);
+
+    // Handle Enter key press in search input
+    document.getElementById('search-input').addEventListener('keyup', function(event) {
+      if (event.key === 'Enter') {
+        performSearch();
+      }
+    });
+  </script>
+</body>
+</html>
